@@ -17,10 +17,10 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        bookInput = findViewById(R.id.book_input);
-        authorInput = findViewById(R.id.author_input);
-        pagesInput = findViewById(R.id.page_input);
-        addButton = findViewById(R.id.add_btn);
+        bookInput = findViewById(R.id.update_book_input);
+        authorInput = findViewById(R.id.update_author_input);
+        pagesInput = findViewById(R.id.update_page_input);
+        addButton = findViewById(R.id.update_btn);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
