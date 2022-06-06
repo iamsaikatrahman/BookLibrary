@@ -2,6 +2,7 @@ package com.saikat.booklibrary;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -82,6 +83,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Failed To Updated", Toast.LENGTH_SHORT).show();
         } else{
             Toast.makeText(context, "Successfully updated", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+    void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed To Delete", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully Deleted", Toast.LENGTH_SHORT).show();
         }
     }
 }

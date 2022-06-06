@@ -1,8 +1,10 @@
 package com.saikat.booklibrary;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
     EditText title_input, author_input, pages_input;
-    Button update_button;
+    Button update_button, delete_button;
 
     String id, title, author, pages;
 
@@ -24,6 +26,7 @@ public class UpdateActivity extends AppCompatActivity {
         author_input = findViewById(R.id.update_author_input);
         pages_input = findViewById(R.id.update_page_input);
         update_button = findViewById(R.id.update_btn);
+        delete_button = findViewById(R.id.delete_btn);
         // First we call this
         getAndSetIntentData();
         //Set actionbar title after getAndSetIntentData method
@@ -40,6 +43,12 @@ public class UpdateActivity extends AppCompatActivity {
                 author = author_input.getText().toString().trim();
                 pages = pages_input.getText().toString().trim();
                 myDB.updateData(id, title, author, pages);
+            }
+        });
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirmDialog();
             }
         });
 
@@ -60,5 +69,24 @@ public class UpdateActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete " + title + " ? ");
+        builder.setMessage("Are you sure you want to delete " + title + " ? ");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MyDatabaseHelper db = new MyDatabaseHelper(UpdateActivity.this);
+                db.deleteOneRow(id);
+            }
+        });
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        builder.show();
     }
 }

@@ -60,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == 1){
+//        if(resultCode == 1){
+//            recreate();
+//        }
+        if(resultCode == 0){
             recreate();
         }
     }
