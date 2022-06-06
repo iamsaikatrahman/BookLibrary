@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android projects/BookLibrary/app/src/main/res/drawable/ic_nodata.xml" value="0.1415" />
         <entry key="..\:/android projects/BookLibrary/app/src/main/res/layout/activity_add.xml" value="0.25" />
-        <entry key="..\:/android projects/BookLibrary/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/android projects/BookLibrary/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/android projects/BookLibrary/app/src/main/res/layout/activity_update.xml" value="0.1671875" />
         <entry key="..\:/android projects/BookLibrary/app/src/main/res/layout/my_row.xml" value="0.20416666666666666" />
         <entry key="..\:/android projects/BookLibrary/app/src/main/res/menu/my_menu.xml" value="0.19444444444444445" />

@@ -28,7 +28,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-<!--    android:layout_marginTop="?attr/actionBarSize"-->
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/empty_imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:alpha="0.1"
+        android:src="@drawable/ic_nodata"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.408" />
+
+    <TextView
+        android:id="@+id/tv_noData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:alpha="0.4"
+        android:text="No Data"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/empty_imageview"
+        app:layout_constraintStart_toStartOf="@+id/empty_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/empty_imageview" />
+    <!--    android:layout_marginTop="?attr/actionBarSize"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
